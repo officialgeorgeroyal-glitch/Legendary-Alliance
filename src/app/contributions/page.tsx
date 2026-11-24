@@ -1,6 +1,7 @@
 'use client';
+import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Building2,
@@ -26,6 +27,7 @@ export default function ContributionsPage() {
   const [contributionType, setContributionType] = useState<ContributionType>('ASSET_PLEDGE');
   const [targetAsset, setTargetAsset] = useState<string>('European 2nd Tier Football Club (Gateway)');
   const [amount, setAmount] = useState<number>(2500);
+  const [recipientName, setRecipientName] = useState('');
   const [currency, setCurrency] = useState<string>('USD');
   const [paymentMethod, setPaymentMethod] = useState<string>('CARD');
   const [disclaimerAccepted, setDisclaimerAccepted] = useState<boolean>(false);
@@ -40,7 +42,7 @@ export default function ContributionsPage() {
 
   // Sample history
   const [contributionsList, setContributionsList] = useState<MemberContribution[]>([
-    {
+    ({
       id: 'tx-prev-1',
       user_id: 'usr-demo-1',
       contribution_type: 'ASSET_PLEDGE',
@@ -54,8 +56,8 @@ export default function ContributionsPage() {
       disclaimer_accepted: true,
       created_at: '2026-11-15T14:30:00Z',
       updated_at: '2026-11-15T14:30:00Z',
-    },
-    {
+    } as unknown as MemberContribution),
+    ({
       id: 'tx-prev-2',
       user_id: 'usr-demo-1',
       contribution_type: 'ANNUAL_DUES',
@@ -69,18 +71,18 @@ export default function ContributionsPage() {
       disclaimer_accepted: true,
       created_at: '2026-11-01T09:15:00Z',
       updated_at: '2026-11-01T09:15:00Z',
-    },
+    } as unknown as MemberContribution),
   ]);
 
   const expectedPoints = Math.floor(amount * 10);
-  const initialContributionsRef = useRef(contributions);
+  const initialContributionsRef = useRef(contributionsList);
   const handleResetContributions = () => {
     try {
       window.localStorage.removeItem('legendary_alliance_contributions_v1');
     } catch {
       // Ignore storage removal errors
     }
-    setContributions(initialContributionsRef.current);
+    setContributionsList(initialContributionsRef.current);
   };
 
   useEffect(() => {
@@ -89,23 +91,22 @@ export default function ContributionsPage() {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setContributions(parsed);
+          setContributionsList(parsed);
         }
       }
     } catch {
-      // Keep default seed contributions if storage is unavailable or invalid
+      // Keep default seed contributionsList if storage is unavailable or invalid
     }
   }, []);
 
   useEffect(() => {
     try {
-      window.localStorage.setItem('legendary_alliance_contributions_v1', JSON.stringify(contributions));
+      window.localStorage.setItem('legendary_alliance_contributions_v1', JSON.stringify(contributionsList));
     } catch {
       // Ignore storage write errors
     }
-  }, [contributions]);
+  }, [contributionsList]);
 
-    const [recipientName, setRecipientName] = useState('');
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -163,7 +164,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <span>Club Asset Syndicate & Capital Pledging</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold font-display text-white">
-            Member Contributions & Syndicate Pledges
+            Member contributionsList & Syndicate Pledges
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
             Pledge resources towards the collective acquisition of global football assets (clubs, training facilities, sports hotels, and hostels). Earn 10 Loyalty Points per $1 pledged.
@@ -462,7 +463,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               onClick={handleResetContributions}
               className="w-full rounded-lg border border-white/15 px-3 py-2 text-xs font-medium text-gray-300 hover:bg-white/5 transition-colors"
             >
-              Reset Seed Contributions
+              Reset Seed contributionsList
             </button>
 
               <button
