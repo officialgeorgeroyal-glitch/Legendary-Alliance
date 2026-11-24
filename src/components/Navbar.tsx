@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Shield, Sparkles, User, Award, LogOut, CheckCircle2 } from 'lucide-react';
+import { Shield, Sparkles, Award, Coins, Users, TrendingUp } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -28,7 +28,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm">
+        <nav className="hidden md:flex items-center space-x-5 text-sm">
           <Link
             href="/"
             className={`transition-colors hover:text-gold-400 ${
@@ -38,20 +38,31 @@ export default function Navbar() {
             Overview
           </Link>
           <Link
-            href="/onboarding"
-            className={`transition-colors hover:text-gold-400 ${
-              pathname === '/onboarding' ? 'text-gold-400 font-medium' : 'text-slate-300'
+            href="/contributions"
+            className={`transition-colors hover:text-gold-400 flex items-center space-x-1.5 ${
+              pathname === '/contributions' ? 'text-gold-400 font-medium' : 'text-slate-300'
             }`}
           >
-            Onboarding
+            <Coins className="w-3.5 h-3.5 text-gold-500" />
+            <span>Contribute</span>
           </Link>
           <Link
-            href="/kyc"
-            className={`transition-colors hover:text-gold-400 ${
-              pathname === '/kyc' ? 'text-gold-400 font-medium' : 'text-slate-300'
+            href="/referrals"
+            className={`transition-colors hover:text-gold-400 flex items-center space-x-1.5 ${
+              pathname === '/referrals' ? 'text-gold-400 font-medium' : 'text-slate-300'
             }`}
           >
-            Identity Verification
+            <Users className="w-3.5 h-3.5 text-blue-400" />
+            <span>Referrals</span>
+          </Link>
+          <Link
+            href="/loyalty"
+            className={`transition-colors hover:text-gold-400 flex items-center space-x-1.5 ${
+              pathname === '/loyalty' ? 'text-gold-400 font-medium' : 'text-slate-300'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+            <span>Loyalty</span>
           </Link>
           <Link
             href="/admin/footballers"

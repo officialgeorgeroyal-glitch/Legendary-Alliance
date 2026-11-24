@@ -27,6 +27,9 @@ export default function Footer() {
             <li><Link href="/" className="hover:text-gold-400 transition-colors">Overview</Link></li>
             <li><Link href="/onboarding" className="hover:text-gold-400 transition-colors">Member Onboarding</Link></li>
             <li><Link href="/kyc" className="hover:text-gold-400 transition-colors">Biometric Verification</Link></li>
+            <li><Link href="/contributions" className="hover:text-gold-400 transition-colors">Contributions & Pledges</Link></li>
+            <li><Link href="/referrals" className="hover:text-gold-400 transition-colors">Referral Programme</Link></li>
+            <li><Link href="/loyalty" className="hover:text-gold-400 transition-colors">Loyalty Hub & Rewards</Link></li>
             <li><Link href="/admin/footballers" className="hover:text-gold-400 transition-colors">Legend Fast-Track Panel</Link></li>
             <li><Link href="/dashboard" className="hover:text-gold-400 transition-colors">Member Portal</Link></li>
           </ul>
