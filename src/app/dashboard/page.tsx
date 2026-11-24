@@ -104,6 +104,27 @@ export default function DashboardPage() {
     setProposalSubmitted(true);
     setTimeout(() => setProposalSubmitted(false), 4000);
   };
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('legendary_alliance_proposals_v1');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setProposals(parsed);
+        }
+      }
+    } catch {
+      // Fall back to initial seed proposals if storage is unavailable or JSON is invalid
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('legendary_alliance_proposals_v1', JSON.stringify(proposals));
+    } catch {
+      // Ignore storage write errors in restricted environments
+    }
+  }, [proposals]);
 
   return (
     <div className="min-h-[85vh] py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
