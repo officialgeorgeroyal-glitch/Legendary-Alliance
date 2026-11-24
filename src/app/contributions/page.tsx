@@ -50,6 +50,7 @@ export default function ContributionsPage() {
       status: 'COMPLETED',
       payment_method: 'WIRE_TRANSFER',
       transaction_reference: 'LA-TX-1700812-4912',
+          recipient_name: recipientName.trim() || null,
       disclaimer_accepted: true,
       created_at: '2026-11-15T14:30:00Z',
       updated_at: '2026-11-15T14:30:00Z',
@@ -64,6 +65,7 @@ export default function ContributionsPage() {
       status: 'COMPLETED',
       payment_method: 'CARD',
       transaction_reference: 'LA-TX-1700650-8812',
+          recipient_name: recipientName.trim() || null,
       disclaimer_accepted: true,
       created_at: '2026-11-01T09:15:00Z',
       updated_at: '2026-11-01T09:15:00Z',
@@ -110,6 +112,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
 
     setLoading(true);
+    const trimmedRecipient = recipientName.trim();
 
     try {
       const result = await createContribution({
@@ -136,6 +139,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     } catch (err: any) {
       setError(err?.message || 'Failed to submit pledge. Please try again.');
     } finally {
+      setRecipientName('');
       setLoading(false);
     }
   };
@@ -432,6 +436,18 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </p>
                 </div>
               </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">
+                Recipient Member (Optional — for contributing to another member)
+              </label>
+              <input
+                type="text"
+                value={recipientName}
+                onChange={(e) => setRecipientName(e.target.value)}
+                placeholder="Recipient member name or ID"
+                className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-gold-400"
+              />
+            </div>
 
               <button
                 type="submit"
