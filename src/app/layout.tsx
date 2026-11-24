@@ -2,13 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 export const metadata: Metadata = {
-  title: 'Legendary Alliance — Pan-African Football Promotional Club',
+  title: 'Legendary Alliance — ',
   description:
     'A private promotional club uniting current African footballers, former legends, and diaspora enthusiasts to pool resources and acquire global football assets.',
 };
-
 export default function RootLayout({
   children,
 }: {

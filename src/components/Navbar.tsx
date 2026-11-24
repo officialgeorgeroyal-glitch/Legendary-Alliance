@@ -1,12 +1,9 @@
 'use client';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Shield, Sparkles, Award, Coins, Users, TrendingUp } from 'lucide-react';
-
 export default function Navbar() {
   const pathname = usePathname();
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gold-500/20 bg-background/85 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -21,12 +18,8 @@ export default function Navbar() {
             <span className="text-xl font-bold tracking-wider gold-gradient-text uppercase block font-display">
               Legendary Alliance
             </span>
-            <span className="text-[10px] tracking-widest text-slate-400 uppercase -mt-1 block">
-              Pan-African Football Promotional Club
-            </span>
           </div>
         </Link>
-
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-5 text-sm">
           <Link
@@ -82,7 +75,6 @@ export default function Navbar() {
             Dashboard
           </Link>
         </nav>
-
         {/* Right CTA */}
         <div className="flex items-center space-x-3">
           <Link

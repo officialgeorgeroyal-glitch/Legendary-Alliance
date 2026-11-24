@@ -1,8 +1,6 @@
 'use client';
-
 import React, { useState } from 'react';
 import { ShieldAlert, Scale, CheckSquare, Square, FileText, CheckCircle2 } from 'lucide-react';
-
 interface TermsModalProps {
   isOpen: boolean;
   onAccept: (termsData: {
@@ -13,20 +11,15 @@ interface TermsModalProps {
   }) => void;
   onCancel?: () => void;
 }
-
 export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalProps) {
   const [agreedClubNature, setAgreedClubNature] = useState(false);
   const [agreedNonInvestment, setAgreedNonInvestment] = useState(false);
   const [agreedProposalFramework, setAgreedProposalFramework] = useState(false);
-
   if (!isOpen) return null;
-
   const allAgreed = agreedClubNature && agreedNonInvestment && agreedProposalFramework;
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!allAgreed) return;
-
     onAccept({
       termsVersion: 'v1.0-promotional-club',
       clubNatureAcknowledged: agreedClubNature,
@@ -34,7 +27,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
       proposalFrameworkAcknowledged: agreedProposalFramework,
     });
   };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
       <div className="relative w-full max-w-2xl bg-slate-900 border border-gold-500/30 rounded-2xl shadow-2xl overflow-hidden my-8">
@@ -52,7 +44,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
             </p>
           </div>
         </div>
-
         {/* Scrollable Terms Content */}
         <form onSubmit={handleSubmit}>
           <div className="p-6 max-h-[60vh] overflow-y-auto space-y-6 text-sm text-slate-300 border-b border-slate-800">
@@ -66,7 +57,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                 Legendary Alliance operates strictly as a private, cross-border promotional association and strategic alliance. It is <strong className="text-amber-100">NOT</strong> a mutual fund, collective investment scheme (CIS), alternative investment fund (AIF), or public retail securities platform.
               </div>
             </div>
-
             {/* Terms Articles */}
             <div className="space-y-4 text-xs leading-relaxed text-slate-300">
               <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
@@ -78,7 +68,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                   Legendary Alliance is formed to unite current African professional footballers, former legends, and passionate enthusiasts of African heritage worldwide. The Club provides community, strategic networking, promotional advocacy, and a forum for sports business intelligence aimed at elevating African and diaspora ownership in global football.
                 </p>
               </div>
-
               <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
                 <h4 className="font-semibold text-gold-400 text-sm flex items-center space-x-2">
                   <FileText className="w-4 h-4" />
@@ -91,7 +80,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                   All commercial negotiation, technical due diligence, legal structuring, and execution of asset transactions remain exclusively under the fiduciary prospecting authority of Alliance Executive Management and licensed international transaction partners. Member suggestions do not guarantee acquisition or direct equity allocation.
                 </p>
               </div>
-
               <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
                 <h4 className="font-semibold text-gold-400 text-sm flex items-center space-x-2">
                   <FileText className="w-4 h-4" />
@@ -102,7 +90,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                 </p>
               </div>
             </div>
-
             {/* Mandatory Checkboxes */}
             <div className="space-y-3 pt-4 border-t border-slate-800">
               <div
@@ -123,7 +110,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                   I explicitly acknowledge and agree that Legendary Alliance is a private Promotional Club and not a retail investment platform, broker-dealer, or collective investment fund.
                 </div>
               </div>
-
               <div
                 onClick={() => setAgreedNonInvestment(!agreedNonInvestment)}
                 className={`p-3.5 rounded-xl border flex items-start space-x-3 cursor-pointer transition-all ${
@@ -142,7 +128,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
                   I understand that joining the Club does not constitute a public offering of securities or a guarantee of financial returns.
                 </div>
               </div>
-
               <div
                 onClick={() => setAgreedProposalFramework(!agreedProposalFramework)}
                 className={`p-3.5 rounded-xl border flex items-start space-x-3 cursor-pointer transition-all ${
@@ -163,7 +148,6 @@ export default function TermsModal({ isOpen, onAccept, onCancel }: TermsModalPro
               </div>
             </div>
           </div>
-
           {/* Footer Actions */}
           <div className="p-6 bg-slate-950/80 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-400 flex items-center space-x-1.5">

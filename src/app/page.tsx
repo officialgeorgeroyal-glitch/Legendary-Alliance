@@ -13,7 +13,6 @@ import {
   Sparkles,
   Users
 } from 'lucide-react';
-
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -22,22 +21,18 @@ export default function Home() {
         {/* Glow ambient backgrounds */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
-
         <div className="max-w-5xl mx-auto text-center relative z-10">
           {/* Badge pill */}
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold-950/60 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wider uppercase mb-8 shadow-gold-glow">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
             <span>Pan-African & Diaspora Football Promotional Club</span>
           </div>
-
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-display mb-6 leading-tight">
             Uniting African Football Royalty to <span className="gold-gradient-text">Steward Global Assets</span>
           </h1>
-
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             Bringing together current African footballers, former legends, and visionary diaspora enthusiasts to pool influence, network, and prospect premium football assets across the globe.
           </p>
-
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link
@@ -55,7 +50,6 @@ export default function Home() {
               <span>Explore Member Onboarding</span>
             </Link>
           </div>
-
           {/* Core Member Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
             <div className="glass-card p-6 rounded-2xl border border-gold-500/20 relative overflow-hidden group hover:border-gold-500/50 transition-all">
@@ -67,7 +61,6 @@ export default function Home() {
                 Active stars playing in Europe, Africa, the Americas, and Asia. Immediate access to our fast-track Legend/Elite council.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-gold-500/20 relative overflow-hidden group hover:border-gold-500/50 transition-all">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-400">
                 <Shield className="w-6 h-6" />
@@ -77,7 +70,6 @@ export default function Home() {
                 Retired legends and national icons providing strategic counsel, academy oversight, and legacy building.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-gold-500/20 relative overflow-hidden group hover:border-gold-500/50 transition-all">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-4 text-blue-400">
                 <Globe2 className="w-6 h-6" />
@@ -90,7 +82,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Target Asset Classes Section */}
       <section className="w-full py-20 px-4 sm:px-6 lg:px-8 border-y border-gold-500/15 bg-slate-950/60">
         <div className="max-w-6xl mx-auto">
@@ -102,7 +93,6 @@ export default function Home() {
               Members suggest opportunities for collective review, while Alliance management and specialized corporate vehicles prospect and execute acquisitions worldwide.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="glass-card p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
               <div className="p-3 bg-gold-500/10 rounded-xl text-gold-400 w-fit mb-4">
@@ -113,7 +103,6 @@ export default function Home() {
                 European, African, and emerging market football clubs with established youth pipelines and commercial brand upside.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
               <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400 w-fit mb-4">
                 <Shield className="w-6 h-6" />
@@ -123,7 +112,6 @@ export default function Home() {
                 State-of-the-art training facilities across Sub-Saharan Africa and Europe to nurture next-generation talent.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
               <div className="p-3 bg-amber-500/10 rounded-xl text-amber-400 w-fit mb-4">
                 <Hotel className="w-6 h-6" />
@@ -133,7 +121,6 @@ export default function Home() {
                 Bespoke sports hospitality and training camp retreats catering to international teams and pre-season camps.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
               <div className="p-3 bg-purple-500/10 rounded-xl text-purple-400 w-fit mb-4">
                 <Bed className="w-6 h-6" />
@@ -143,7 +130,6 @@ export default function Home() {
                 Secure, modern residential hostels supporting trialists, youth athletes, and sports education scholars.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
               <div className="p-3 bg-cyan-500/10 rounded-xl text-cyan-400 w-fit mb-4">
                 <Cpu className="w-6 h-6" />
@@ -153,7 +139,6 @@ export default function Home() {
                 AI analytics, GPS tracking, video scouting platforms, and recovery technologies optimized for African talent.
               </p>
             </div>
-
             <div className="glass-card p-6 rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-950/30 to-slate-900 flex flex-col justify-between">
               <div>
                 <div className="p-3 bg-gold-500/20 rounded-xl text-gold-400 w-fit mb-4">
@@ -175,7 +160,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Security & Verification Pipeline Section */}
       <section className="w-full py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
@@ -187,7 +171,6 @@ export default function Home() {
               Our 5-tier architecture protects the exclusivity, privacy, and regulatory integrity of the Alliance.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
               <div className="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-400 mb-4">
@@ -198,7 +181,6 @@ export default function Home() {
                 Enforced two-factor authentication via Google Authenticator or Apple Keychain with encrypted backup codes.
               </p>
             </div>
-
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
               <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
                 <Shield className="w-5 h-5" />
@@ -208,7 +190,6 @@ export default function Home() {
                 Broad African National ID and global passport verification paired with live passive 3D facial liveness detection.
               </p>
             </div>
-
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
               <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4">
                 <Award className="w-5 h-5" />

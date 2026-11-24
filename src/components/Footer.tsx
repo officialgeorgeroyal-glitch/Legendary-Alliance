@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Shield, Lock, Globe, Scale } from 'lucide-react';
-
 export default function Footer() {
   return (
     <footer className="w-full border-t border-gold-500/20 bg-slate-950 text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
@@ -20,7 +19,6 @@ export default function Footer() {
             <span>Private Promotional Club Model — Not a retail securities or collective investment scheme.</span>
           </div>
         </div>
-
         <div>
           <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Club Navigation</h4>
           <ul className="space-y-2 text-sm">
@@ -34,7 +32,6 @@ export default function Footer() {
             <li><Link href="/dashboard" className="hover:text-gold-400 transition-colors">Member Portal</Link></li>
           </ul>
         </div>
-
         <div>
           <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Security & Compliance</h4>
           <ul className="space-y-2 text-sm">
@@ -53,7 +50,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
       <div className="max-w-7xl mx-auto pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
         <p>&copy; {new Date().getFullYear()} Legendary Alliance Promotional Club. All rights reserved.</p>
         <p className="mt-2 sm:mt-0">Private Membership • Asset Stewardship • Global Pan-African Unity</p>
