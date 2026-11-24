@@ -46,7 +46,7 @@ export default function DashboardPage() {
       title: 'European 2nd Tier Football Club Acquisition',
       assetType: 'FOOTBALL_CLUB',
       country: 'Portugal / Belgium',
-      estimatedScale: '€12M - €18M',
+      estimatedScale: '€12M – €18M',
       suggestedBy: 'Victor Osimhen (Legend / Elite)',
       reviewStatus: 'Under Management Prospecting',
       description: 'Acquisition of an established Portuguese Liga 2 club with existing UEFA-certified training grounds to serve as primary gateway for African academy graduates.',
