@@ -73,6 +73,15 @@ export default function ContributionsPage() {
   ]);
 
   const expectedPoints = Math.floor(amount * 10);
+  const initialContributionsRef = useRef(contributions);
+  const handleResetContributions = () => {
+    try {
+      window.localStorage.removeItem('legendary_alliance_contributions_v1');
+    } catch {
+      // Ignore storage removal errors
+    }
+    setContributions(initialContributionsRef.current);
+  };
 
   useEffect(() => {
     try {
@@ -448,6 +457,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                 className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-gold-400"
               />
             </div>
+            <button
+              type="button"
+              onClick={handleResetContributions}
+              className="w-full rounded-lg border border-white/15 px-3 py-2 text-xs font-medium text-gray-300 hover:bg-white/5 transition-colors"
+            >
+              Reset Seed Contributions
+            </button>
 
               <button
                 type="submit"
