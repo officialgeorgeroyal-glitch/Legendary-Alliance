@@ -72,7 +72,30 @@ export default function ContributionsPage() {
 
   const expectedPoints = Math.floor(amount * 10);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('legendary_alliance_contributions_v1');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setContributions(parsed);
+        }
+      }
+    } catch {
+      // Keep default seed contributions if storage is unavailable or invalid
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('legendary_alliance_contributions_v1', JSON.stringify(contributions));
+    } catch {
+      // Ignore storage write errors
+    }
+  }, [contributions]);
+
+    const [recipientName, setRecipientName] = useState('');
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
