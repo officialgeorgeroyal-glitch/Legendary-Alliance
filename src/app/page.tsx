@@ -13,6 +13,8 @@ import {
   Sparkles,
   Users
 } from 'lucide-react';
+import NewsBriefsPreview from '@/components/NewsBriefsPreview';
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -202,6 +204,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+          <NewsBriefsPreview />
     </div>
   );
 }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#bg)"/>
+  <circle cx="960" cy="250" r="210" fill="none" stroke="#f59e0b" stroke-opacity="0.22" stroke-width="2"/>
+  <circle cx="960" cy="250" r="145" fill="none" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="2"/>
+  <polygon points="960,135 1060,192 1060,308 960,365 860,308 860,192" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <rect x="80" y="95" width="140" height="6" rx="3" fill="url(#gold)"/>
+  <text x="80" y="165" fill="#ffffff" font-family="Arial, sans-serif" font-size="44" font-weight="bold">LEGENDARY ALLIANCE</text>
+  <text x="80" y="215" fill="#fbbf24" font-family="Arial, sans-serif" font-size="22" font-weight="bold">GLOBAL FOOTBALL ASSETS &amp; MEMBER GOVERNANCE</text>
+  <text x="80" y="265" fill="#9ca3af" font-family="Arial, sans-serif" font-size="18">Club Acquisitions • Training Academies • Hospitality • Sports Tech</text>
+</svg>

@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import { UserProfile, AccountTier, MemberRole } from '@/types';
 
+import NewsBriefsPreview from '@/components/NewsBriefsPreview';
+
 export default function DashboardPage() {
   // Demo active profile state
   const [profile, setProfile] = useState<UserProfile>({
@@ -369,6 +371,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+          <NewsBriefsPreview />
     </div>
   );
 }
